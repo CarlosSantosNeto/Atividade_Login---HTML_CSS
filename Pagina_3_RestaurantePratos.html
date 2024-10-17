@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Restaurante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .menu-section {
+            width: 80%;
+            max-width: 800px;
+        }
+        .menu-section h2 {
+            color: brown;
+            margin-bottom: 15px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .menu-item {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item h3 {
+            margin: 10px 0;
+            color: brown;
+        }
+        .description {
+            display: none;
+            margin-top: 10px;
+            color: gray;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Restaurante Softex</h1>
+    </header>
+    <main class="main">
+        <section class="menu-section">
+            <h2>Pratos Especiais da Casa</h2>
+            <div class="menu-grid">
+                <div class="menu-item" onclick="showDescription('desc1')">
+                    <h3>Feijoada</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 40,00
+                    </div>                    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Feijoada_01.jpg/300px-Feijoada_01.jpg" alt="Feijoada" style="width: 200px; height: auto;">
+                    <div id="desc1" class="description">
+                        Feijoada completa, com feijão preto, carnes e acompanhamentos tradicionais.
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showDescription('desc2')">
+                    <h3>Arrumadinho</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 35,00
+                    </div>                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmedPuvt75a5dUntm9Lz5EzwZvP4H767I89Q&s" alt="Arrumadinho" style="width: 200px; height: auto;">
+                    <div id="desc2" class="description">
+                        Tradicional arrumadinho nordestino, com farofa, carne de sol e feijão verde.
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showDescription('desc3')">
+                    <h3>Galinha Cabidela</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 30,00
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/PortoExterior_PatoDeCabidela.JPG" alt="Galinha Cabidela" style="width: 200px; height: auto;">
+                    <div id="desc3" class="description">
+                        Galinha cozida ao molho de cabidela, servida com arroz branco e pirão.
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showDescription('desc4')">
+                    <h3>Galeto</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 35,00
+                    </div>     
+                    <img src="https://swiftbr.vteximg.com.br/arquivos/galeto-na-brasa-com-creme-de-milho.jpg" alt="Galeto" style="width: 200px; height: auto;">
+                    <div id="desc4" class="description">
+                        Galeto assado na brasa, com molho especial da casa e acompanhamentos.
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showDescription('desc5')">
+                    <h3>Caldinho</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 12,50
+                    </div>
+                    <img src="https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2017/03/21/694909/20170320184846705505a.jpg" alt="Caldinho" style="width: 200px; height: auto;">
+                    <div id="desc5" class="description">
+                        Caldinho de feijão ou de camarão, perfeito para abrir o apetite.
+                    </div>
+                </div>
+                <div class="menu-item" onclick="showDescription('desc6')">
+                    <h3>Barriga de Porco</h3>
+                    <div class="price" style="color: green; font-size: 18px; margin: 10px 0;">
+                        R$ 58,90
+                    </div>  
+                    <img src="https://sousvide.orvedbrock.com.br/wp-content/uploads/2024/01/Barriga-de-porco-com-molho-oriental.png" alt="Barriga de Porco" style="width: 200px; height: auto;">
+                    <div id="desc6" class="description">
+                        Barriga de porco crocante, servida com batatas rústicas e molho agridoce.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Rua Rodrigues Ferreira 45
+    </footer>
+
+    <script>
+        function showDescription(id) {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(desc => {
+                if (desc.id === id) {
+                    desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    desc.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
